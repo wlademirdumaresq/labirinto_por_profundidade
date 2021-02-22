@@ -2,8 +2,8 @@ package ufrn.imd.br.entities;
 
 public class BuscaEmProfundidade {
 
-    private Labirinto labirinto;
-    private boolean caminhosPercorridos [][];
+    private final Labirinto labirinto;
+    private final boolean[][] caminhosPercorridos;
 
     public BuscaEmProfundidade(Labirinto labirinto) {
         this.labirinto = labirinto;
@@ -15,10 +15,7 @@ public class BuscaEmProfundidade {
     }
 
     public boolean validadorLocalizacao(int linha, int coluna){
-        if(linha < 0 || linha >= this.labirinto.getLinhas() || coluna < 0 || coluna >= this.labirinto.getColunas()){
-            return true;
-        }
-        return false;
+        return linha < 0 || linha >= this.labirinto.getLinhas() || coluna < 0 || coluna >= this.labirinto.getColunas();
     }
 
     public void alterarValidadorRota(int linha, int coluna, boolean caminhou){
@@ -38,7 +35,7 @@ public class BuscaEmProfundidade {
         }
         this.alterarValidadorRota(linha,coluna,true);
 
-        if(this.labirinto.getSaida().getLinha() == linha && this.labirinto.getSaida().getColuna() == coluna){
+        if(l.getSaida().getLinha() == linha && l.getSaida().getColuna() == coluna){
             return true;
         }
         if (percorrer(l, linha, coluna + 1)) {
