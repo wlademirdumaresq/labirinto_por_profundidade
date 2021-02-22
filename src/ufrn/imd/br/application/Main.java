@@ -11,21 +11,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String labirinto_em_matriz[][] = {
                 {"E", "#", "#", "#"},
-                {".", ".", "#", "."},
+                {".", ".", ".", "."},
                 {"#", ".", "#", "#"},
                 {"#", ".", ".", "."},
                 {"#", "#", "#", "."},
                 {"#", ".", ".", "."},
+                {"#", ".", ".", "."},
+                {"#", "#", ".", "."},
+                {"#", ".", ".", "."},
                 {"#", ".", ".", "#"},
-                {"#", "#", ".", "#"},
-                {"#", ".", ".", "#"},
-                {"#", ".", ".", "#"},
-                {"#", "#", "S", "#"}
+                {"#", "S", "#", "#"}
         };
 
-        for (int l = 0; l < labirinto_em_matriz.length; l++) {
-            for (int c = 0; c < labirinto_em_matriz[0].length; c++) {
-                System.out.print(labirinto_em_matriz[l][c] + " "); //imprime caracter a caracter
+        for (int i = 0; i < labirinto_em_matriz.length; i++) {
+            for (int j = 0; j < labirinto_em_matriz[0].length; j++) {
+                System.out.print(labirinto_em_matriz[i][j] + " "); //imprime caracter a caracter
             }
             System.out.println(" "); //muda de linha
         }
@@ -36,19 +36,19 @@ public class Main {
 
 
         if (buscaEmProfundidade.percorrer()) {
-            for (int l = 0; l < buscaEmProfundidade.getCaminhosPercorridos().length; l++) {
-                for (int c = 0; c < buscaEmProfundidade.getCaminhosPercorridos()[0].length; c++) {
-                    if (labirinto.getMatriz()[l][c].equals("E") || labirinto.getMatriz()[l][c].equals("S")) {
-                        System.out.print(labirinto_em_matriz[l][c] + " ");
+            for (int i = 0; i < buscaEmProfundidade.getCaminhosPercorridos().length; i++) {
+                for (int j = 0; j < buscaEmProfundidade.getCaminhosPercorridos()[0].length; j++) {
+                    if (labirinto.getMatriz()[i][j].equals("E") || labirinto.getMatriz()[i][j].equals("S")) {
+                        System.out.print(labirinto_em_matriz[i][j] + " ");
                     } else {
-                        if (buscaEmProfundidade.getCaminhosPercorridos()[l][c]) {
+                        if (buscaEmProfundidade.getCaminhosPercorridos()[i][j]) {
                             System.out.print("* ");
                         } else {
-                            System.out.print(labirinto_em_matriz[l][c] + " ");
+                            System.out.print(labirinto_em_matriz[i][j] + " ");
                         }
                     }
                 }
-                System.out.println(" "); //muda de linha
+                System.out.println(" ");
             }
         } else {
             System.out.println("não chegou");

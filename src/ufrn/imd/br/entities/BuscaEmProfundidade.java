@@ -54,7 +54,7 @@ public class BuscaEmProfundidade {
             return true;
         }
 
-
+        this.alterarValidadorRota(linha,coluna,false);
         return false;
     }
 }
