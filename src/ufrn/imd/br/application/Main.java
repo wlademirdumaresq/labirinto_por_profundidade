@@ -10,7 +10,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String labirinto_em_matriz[][] = {
-                {"E", "#", "#", "#"},
+                {"S", "#", "#", "#"},
+                {"E", ".", ".", "."},
+                {".", ".", ".", "."},
                 {".", ".", ".", "."},
                 {"#", ".", "#", "#"},
                 {"#", ".", ".", "."},
@@ -20,7 +22,7 @@ public class Main {
                 {"#", "#", ".", "."},
                 {"#", ".", ".", "."},
                 {"#", ".", ".", "#"},
-                {"#", "S", "#", "#"}
+                {"#", "#", "#", "#"}
         };
 
         for (int i = 0; i < labirinto_em_matriz.length; i++) {
@@ -40,6 +42,7 @@ public class Main {
                 for (int j = 0; j < buscaEmProfundidade.getCaminhosPercorridos()[0].length; j++) {
                     if (labirinto.getMatriz()[i][j].equals("E") || labirinto.getMatriz()[i][j].equals("S")) {
                         System.out.print(labirinto_em_matriz[i][j] + " ");
+
                     } else {
                         if (buscaEmProfundidade.getCaminhosPercorridos()[i][j]) {
                             System.out.print("* ");

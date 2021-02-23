@@ -9,10 +9,6 @@ public class Localizacao {
         this.coluna = coluna;
     }
 
-    public Localizacao(Integer linha, Integer coluna, Localizacao anterior) {
-        this.linha = linha;
-        this.coluna = coluna;
-    }
 
     public Integer getLinha() {
         return linha;
