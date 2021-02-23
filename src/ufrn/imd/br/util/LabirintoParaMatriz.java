@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class LabirintoParaMatriz {
-    public static String[][] Matriz() {
+    public static String[][] Matriz(String pathArquivo) {
         String[][] labirinto_em_matriz;
         try {
-            FileReader arq = new FileReader("src/ufrn/imd/br/application/labirintosTXT/labirinto01");
+            FileReader arq = new FileReader(pathArquivo);
 
             Scanner leitor = new Scanner(arq);
             int leitorLinhas = 0;
@@ -20,7 +20,7 @@ public class LabirintoParaMatriz {
                 leitorLinhas += 1;
             }
 
-            FileReader arq2 = new FileReader("src/ufrn/imd/br/application/labirintosTXT/labirinto01");
+            FileReader arq2 = new FileReader(pathArquivo);
             leitor = new Scanner(arq2);
             labirinto_em_matriz = new String[leitorLinhas][leitorColunas];
             int i = 0;
