@@ -9,11 +9,20 @@ import java.util.Objects;
 public class Main {
 
     public static void main(String[] args) {
+        String pathArquivo = new String();
+        if (args.length >= 1){
+            try {
+                pathArquivo = args[0];
+            }catch (Exception e){
+                System.out.println("Erro ao abrir arquivo");
+            }
+        }
+        System.out.println(pathArquivo);
 
-        if (Objects.equals(LabirintoParaMatriz.Matriz(), null)) {
+        if (Objects.equals(LabirintoParaMatriz.Matriz(pathArquivo), null)) {
             System.out.println("labirinto invalido");
         } else {
-            String[][] labirinto_em_matriz = LabirintoParaMatriz.Matriz();
+            String[][] labirinto_em_matriz = LabirintoParaMatriz.Matriz(pathArquivo);
             Labirinto labirinto = new Labirinto(labirinto_em_matriz);
             System.out.println("LABIRINTO INICIAL ");
             labirinto.print();
