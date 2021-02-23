@@ -15,12 +15,17 @@ public class Main {
         } else {
             String[][] labirinto_em_matriz = LabirintoParaMatriz.Matriz();
             Labirinto labirinto = new Labirinto(labirinto_em_matriz);
+            System.out.println("LABIRINTO INICIAL ");
             labirinto.print();
 
             BuscaEmProfundidade buscaEmProfundidade = new BuscaEmProfundidade(labirinto);
 
             if (buscaEmProfundidade.percorrer()) {
+                System.out.println("CAMINHOS PERCORRIDOS ");
                 buscaEmProfundidade.printSolucao();
+                System.out.println();
+                System.out.println("ROTA FINAL ");
+                buscaEmProfundidade.printRotaFinal();
             } else {
                 System.out.println("não chegou");
             }
