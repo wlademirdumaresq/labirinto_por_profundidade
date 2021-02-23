@@ -1,7 +1,10 @@
-package ufrn.imd.br.entities;
+package ufrn.imd.br.entities.test;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import ufrn.imd.br.entities.BuscaEmProfundidade;
+import ufrn.imd.br.entities.Labirinto;
+import ufrn.imd.br.entities.Localizacao;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +14,7 @@ private static BuscaEmProfundidade buscaEmProfundidade;
 
     @BeforeClass
     public static void setUpBeforeClass(){
-        String labirinto_em_matriz[][] = {
+        String[][] labirinto_em_matriz = {
                 {"#", "E", "#", "#"},
                 {".", ".", ".", "."},
                 {".", ".", ".", "."},
@@ -60,11 +63,11 @@ private static BuscaEmProfundidade buscaEmProfundidade;
     }
     @Test
     public void percorrer() {
-        assertEquals(buscaEmProfundidade.percorrer(),true);
+        assertTrue(buscaEmProfundidade.percorrer());
     }
     @Test
     public void percorrerCaminhoFechado() {
-        String labirinto_em_matriz[][] = {
+        String[][] labirinto_em_matriz = {
                 {"#", "E", "#", "#"},
                 {".", ".", ".", "."},
                 {".", ".", ".", "."},
@@ -83,7 +86,7 @@ private static BuscaEmProfundidade buscaEmProfundidade;
         Labirinto tmp = new Labirinto(labirinto_em_matriz);
         BuscaEmProfundidade buscaTMP = new BuscaEmProfundidade(tmp);
 
-        assertEquals(buscaTMP.percorrer(),false);
+        assertFalse(buscaTMP.percorrer());
     }
 
 

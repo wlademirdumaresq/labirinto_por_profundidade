@@ -51,7 +51,25 @@ public class BuscaEmProfundidade {
             return true;
         }
 
-        this.alterarValidadorRota(linha,coluna,false);
+//        this.alterarValidadorRota(linha,coluna,false);
         return false;
+    }
+
+    public void printSolucao(){
+        for (int i = 0; i < this.getCaminhosPercorridos().length; i++) {
+            for (int j = 0; j < this.getCaminhosPercorridos()[0].length; j++) {
+                if (labirinto.getMatriz()[i][j].equals("E") || this.labirinto.getMatriz()[i][j].equals("S")) {
+                    System.out.print(this.labirinto.getMatriz()[i][j] + " ");
+
+                } else {
+                    if (this.getCaminhosPercorridos()[i][j]) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print(this.labirinto.getMatriz()[i][j] + " ");
+                    }
+                }
+            }
+            System.out.println(" ");
+        }
     }
 }

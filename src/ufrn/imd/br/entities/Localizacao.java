@@ -1,8 +1,8 @@
 package ufrn.imd.br.entities;
 
 public class Localizacao {
-    private Integer linha;
-    private Integer coluna;
+    private final Integer linha;
+    private final Integer coluna;
 
     public Localizacao(Integer linha, Integer coluna) {
         this.linha = linha;
