@@ -1,12 +1,17 @@
 package ufrn.imd.br.entities.test;
 
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import ufrn.imd.br.entities.BuscaEmProfundidade;
 import ufrn.imd.br.entities.Labirinto;
 import ufrn.imd.br.entities.Localizacao;
 
-import static org.junit.Assert.*;
 
 public class BuscaEmProfundidadeTest {
 private static Labirinto labirinto;
